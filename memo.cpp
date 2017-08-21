@@ -62,8 +62,8 @@ int memoPool::pushdata(char *data, int len)
     while(length < len)
     {
         char* tmp = m_memory.at(__in);
-        int size = (len-length)>(m_size - __inposition)?m_size - __inposition:len-length;
-        if(__in == __out&&__inposition + size> __outposition&& __inposition <__outposition)
+        int size = (len-length)>(m_size - __inposition)? m_size - __inposition:len-length;
+        if(__in == __out && __inposition + size> __outposition && __inposition <__outposition)
         {
             return length;
         }
@@ -82,7 +82,7 @@ int memoPool::popdata(char *data, int len)
     while(length < len)
     {
         char* tmp = m_memory.at(__out);
-        int size = (len-length)>(m_size - __outposition)?m_size - __outposition :len-length;
+        int size = (len-length)>(m_size - __outposition)? m_size - __outposition :len-length;
         if(__out == __in && __outposition + size> __inposition && __outposition <= __inposition)
         {
             return length;
