@@ -14,7 +14,7 @@ public:
 
 
 private:
-    QVector<char*> m_memory;
+    std::vector<char*> m_memory;
     int m_count;
     int m_size;
     int __in;
